@@ -72,6 +72,6 @@ services:
       - invoicenet
       
 networks:
-  web:
+  invoicenet:
     external:
       name: invoicenet

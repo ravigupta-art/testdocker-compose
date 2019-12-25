@@ -19,7 +19,7 @@ services:
     volumes:
       - db:/var/lib/mysql
     networks:
-      - default
+      - invoicenet
 
   app:
     image: altback/invoiceninjatest

@@ -74,4 +74,4 @@ services:
 networks:
   web:
     external:
-      name: web
+      name: invoicenet

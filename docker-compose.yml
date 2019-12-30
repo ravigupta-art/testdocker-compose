@@ -19,7 +19,7 @@ services:
     volumes:
       - db:/var/lib/mysql
     networks:
-      - piholenet2
+      - piholenet
 
   app:
     image: altback/invoiceninjatest
@@ -32,7 +32,7 @@ services:
       -  logo:/var/www/app/public/logo
       -  public:/var/www/app/public
     networks:
-      - piholenet2
+      - piholenet
 
   web:
     image: nginx:1
@@ -49,7 +49,7 @@ services:
       - 8080:80
     networks:
 #      - web        # uncomment if you want to use  external network (reverse proxy for example)
-      - piholenet2
+      - piholenet
 
   cron:
     image: altback/invoiceninjatest
@@ -69,11 +69,10 @@ services:
       done
       EOF'
     networks:
-      - piholenet2    
+      - piholenet
       
 networks:
-  private:
-  piholenet2:
+  piholenet:
     driver: macvlan
     driver_opts:
       parent: eth0

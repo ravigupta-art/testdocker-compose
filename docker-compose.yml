@@ -7,9 +7,9 @@ volumes:
   public:
 
 # uncomment if you want to use external network (example network: "web")
-#networks:
-#  web:
-#    external: true
+networks:
+  piholenet:
+    external: true
 
 services:
   db:
@@ -70,12 +70,4 @@ services:
       EOF'
     networks:
       - piholenet
-      
-networks:
-  piholenet:
-    driver: macvlan
-    driver_opts:
-      parent: eth0
-    ipam:
-      config:
-        - subnet: 192.168.0.0/20      
+        
